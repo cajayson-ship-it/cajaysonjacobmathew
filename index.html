@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CA Jayson Jacob Mathew | Chartered Accountant & Advisory</title>
+  <style>
+    /* Reset and Base Variables */
+    :root {
+      --primary: #0f172a;       /* Deep executive navy */
+      --primary-light: #1e293b;
+      --accent: #d97706;        /* Warm executive gold */
+      --accent-hover: #b45309;
+      --bg: #f8fafc;            /* Clean light grey-white */
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --radius: 12px;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Navigation Bar */
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 72px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--primary);
+    }
+
+    .brand-badge {
+      background: var(--primary);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 14px;
+      padding: 6px 10px;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    .brand-name {
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--primary);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 15px;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .nav-btn {
+      background: var(--primary);
+      color: #fff !important;
+      padding: 8px 18px;
+      border-radius: 8px;
+      transition: background 0.2s ease;
+    }
+
+    .nav-btn:hover {
+      background: var(--accent);
+      color: #fff !important;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 80px 0 60px;
+      background: linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .badge-pill {
+      display: inline-block;
+      background: #fef3c7;
+      color: #92400e;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 4px 14px;
+      border-radius: 50px;
+      margin-bottom: 18px;
+      border: 1px solid #fde68a;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      line-height: 1.2;
+      color: var(--primary);
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .hero-tagline {
+      font-size: 18px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .hero-desc {
+      font-size: 16px;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      max-width: 580px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 26px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 15px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+      border: 1px solid var(--primary);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border: 1px solid var(--border);
+    }
+
+    .btn-outline:hover {
+      background: #ffffff;
+      border-color: var(--primary);
+    }
+
+    /* Hero Photo Card */
+    .hero-card {
+      background: #ffffff;
+      border-radius: var(--radius);
+      padding: 24px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-lg);
+      text-align: center;
+    }
+
+    .avatar-wrapper {
+      width: 180px;
+      height: 180px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: #e2e8f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border: 4px solid #ffffff;
+      box-shadow: var(--shadow);
+    }
+
+    .avatar-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .avatar-placeholder {
+      font-size: 48px;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .hero-card h3 {
+      font-size: 18px;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .hero-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .hero-meta {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* Section Styling */
+    section {
+      padding: 70px 0;
+    }
+
+    .section-title {
+      font-size: 30px;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 16px;
+      max-width: 650px;
+      margin: 0 auto 48px;
+    }
+
+    /* Leadership Roles Grid */
+    .roles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .role-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .role-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .role-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      background: #eff6ff;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+
+    .role-card h4 {
+      font-size: 18px;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .role-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    /* About Section */
+    .about-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px;
+      box-shadow: var(--shadow);
+      font-size: 16px;
+      color: #334155;
+      line-height: 1.8;
+    }
+
+    .about-box p {
+      margin-bottom: 16px;
+    }
+
+    .about-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Experience Timeline */
+    .timeline {
+      position: relative;
+      max-width: 860px;
+      margin: 0 auto;
+      border-left: 2px solid #cbd5e1;
+      padding-left: 32px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 40px;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -40px;
+      top: 4px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 3px solid #ffffff;
+      box-shadow: 0 0 0 2px var(--accent);
+    }
+
+    .timeline-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .timeline-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .timeline-company {
+      font-size: 15px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .timeline-date {
+      font-size: 13px;
+      color: var(--text-muted);
+      background: #f1f5f9;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-weight: 500;
+    }
+
+    .timeline-desc {
+      font-size: 14px;
+      color: #475569;
+      margin-top: 10px;
+    }
+
+    .timeline-desc ul {
+      margin-left: 20px;
+      margin-top: 8px;
+    }
+
+    .timeline-desc li {
+      margin-bottom: 4px;
+    }
+
+    /* Certifications & Education */
+    .badges-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 16px;
+    }
+
+    .cert-badge {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: var(--shadow);
+    }
+
+    .cert-icon {
+      color: var(--accent);
+      font-size: 20px;
+    }
+
+    .cert-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .cert-org {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* Contact Section */
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+    }
+
+    .contact-info {
+      background: var(--primary);
+      color: #ffffff;
+      padding: 36px;
+      border-radius: var(--radius);
+    }
+
+    .contact-info h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .contact-info p {
+      color: #94a3b8;
+      font-size: 14px;
+      margin-bottom: 28px;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .info-label {
+      font-size: 12px;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .info-value a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .info-value a:hover {
+      color: var(--accent);
+    }
+
+    .contact-form {
+      background: var(--card-bg);
+      padding: 36px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--primary);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-control:focus {
+      border-color: var(--accent);
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    /* Footer */
+    footer {
+      background: #090d16;
+      color: #64748b;
+      padding: 32px 0;
+      text-align: center;
+      font-size: 14px;
+      border-top: 1px solid #1e293b;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-actions {
+        justify-content: center;
+      }
+      .hero-desc {
+        margin: 0 auto 32px;
+      }
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+      }
+      nav ul {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header>
+    <div class="container nav-wrapper">
+      <a href="#" class="brand">
+        <span class="brand-badge">CA</span>
+        <span class="brand-name">Jayson Jacob Mathew</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#roles">Advisory</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#credentials">Credentials</a></li>
+          <li><a href="#contact" class="nav-btn">Get in Touch</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="badge-pill">Chartered Accountant & Succession Strategist</span>
+        <h1>CA Jayson Jacob Mathew</h1>
+        <p class="hero-tagline">Preserving Legacies • Navigating Complex Financial Landscapes</p>
+        <p class="hero-desc">
+          I help founders, leaders, and family businesses create, protect, and seamlessly transfer their legacy. Specializing in corporate structuring, tax strategy, and high-stakes dispute resolution.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Schedule a Consultation</a>
+          <a href="#experience" class="btn btn-outline">View Career History</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="avatar-wrapper">
+          <img src="profile.jpg" alt="CA Jayson Jacob Mathew" onerror="this.style.display='none'; document.getElementById('avatar-fallback').style.display='block';">
+          <div id="avatar-fallback" class="avatar-placeholder" style="display:none;">JJM</div>
+        </div>
+        <h3>CA Jayson Jacob Mathew</h3>
+        <p>Partner at Saju & Co | Independent Director</p>
+        <div class="hero-meta">
+          <span>📍 Kochi, Kerala, India</span>
+          <span>💼 14+ Years Experience</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Advisory Roles -->
+  <section id="roles" style="background:#ffffff; border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+    <div class="container">
+      <h2 class="section-title">Strategic & Board Leadership</h2>
+      <p class="section-subtitle">A 360° governance and strategy lens across business, international trade, and the profession.</p>
+      
+      <div class="roles-grid">
+        <div class="role-card">
+          <div class="role-icon">🏛️</div>
+          <h4>Independent Director</h4>
+          <p><strong>Danube Industries Limited</strong></p>
+          <p style="margin-top:6px;">Overseeing strategic corporate governance and long-term financial planning.</p>
+        </div>
+
+        <div class="role-card">
+          <div class="role-icon">🌐</div>
+          <h4>International Advisor</h4>
+          <p><strong>Indian Economic Trade Organization (IETO)</strong></p>
+          <p style="margin-top:6px;">Director & International Business Advisor driving global trade strategy.</p>
+        </div>
+
+        <div class="role-card">
+          <div class="role-icon">⚖️</div>
+          <h4>Partner</h4>
+          <p><strong>Saju & Co, Chartered Accountants</strong></p>
+          <p style="margin-top:6px;">Leading tax, high-level corporate audits, and appellate litigation for over a decade.</p>
+        </div>
+
+        <div class="role-card">
+          <div class="role-icon">📜</div>
+          <h4>ICAI Peer Reviewer</h4>
+          <p><strong>Institute of Chartered Accountants of India</strong></p>
+          <p style="margin-top:6px;">Upholding audit quality and the highest standards of professional practice.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-subtitle">Bridging tax planning, governance, and intergenerational success.</p>
+      
+      <div class="about-box">
+        <p>
+          I help founders, leaders, and family businesses create, preserve, and seamlessly transfer their legacy. As a Chartered Accountant with deep expertise in succession consultancy, corporate structuring, tax strategy, management consulting, and risk analysis, I specialize in navigating complex financial landscapes—particularly with LLPs—to optimize business outcomes and leadership continuity.
+        </p>
+        <p>
+          Holding certifications in Arbitration, FEMA, AI & ML, FAFD, BRSR, GST, Public Finance & Government Accounting, and Concurrent Audits from ICAI, I bring a 360° governance and strategy lens to every engagement. My approach blends tax planning, governance, change management, and corporate structuring into a single roadmap that inspires investor confidence.
+        </p>
+        <p>
+          Beyond technical expertise, I am passionate about mentoring and coaching, guiding organizations through leadership transitions while preserving their core culture and vision.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Career Experience Timeline -->
+  <section id="experience" style="background: #ffffff; border-top:1px solid var(--border);">
+    <div class="container">
+      <h2 class="section-title">Professional Experience</h2>
+      <p class="section-subtitle">Over 14 years of professional practice in taxation, corporate audits, and advisory.</p>
+
+      <div class="timeline">
+        
+        <!-- Saju & Co Partner -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <div class="timeline-title">Partner</div>
+                <div class="timeline-company">Saju & Co, Chartered Accountants</div>
+              </div>
+              <span class="timeline-date">Feb 2013 – Present (13+ Years)</span>
+            </div>
+            <div class="timeline-desc">
+              Kochi, Kerala, India
+              <ul>
+                <li>Spearheaded GST and Kerala VAT cases and corporate audits in IT and commercial sectors.</li>
+                <li>Successfully represented clients in critical legal proceedings, including appearances before the <strong>Supreme Court of India</strong> and <strong>CESTAT Bangalore</strong>.</li>
+                <li>Managed Project Loan processes and handled Appeals for both Income Tax and Service Tax.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Saju & Co Manager -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <div class="timeline-title">Manager – Taxation</div>
+                <div class="timeline-company">Saju & Co</div>
+              </div>
+              <span class="timeline-date">Mar 2012 – Jan 2013</span>
+            </div>
+            <div class="timeline-desc">
+              Specialized in Service Tax, Income Tax, and VAT advisory and compliance.
+            </div>
+          </div>
+        </div>
+
+        <!-- Sankar and moorthy -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <div class="timeline-title">Works Manager</div>
+                <div class="timeline-company">Sankar and Moorthy</div>
+              </div>
+              <span class="timeline-date">Aug 2011 – Mar 2012</span>
+            </div>
+            <div class="timeline-desc">
+              Operations management, workflow execution, and administrative leadership.
+            </div>
+          </div>
+        </div>
+
+        <!-- Zachariah George & Co -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <div class="timeline-title">Audit Executive</div>
+                <div class="timeline-company">Zachariah George & Co</div>
+              </div>
+              <span class="timeline-date">Jan 2010 – Jul 2011</span>
+            </div>
+            <div class="timeline-desc">
+              Conducted statutory audits, internal controls assessment, and financial compliance.
+            </div>
+          </div>
+        </div>
+
+        <!-- M M Herbert & Associates -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <div class="timeline-title">Audit Executive & Assistant</div>
+                <div class="timeline-company">M M Herbert & Associates</div>
+              </div>
+              <span class="timeline-date">Feb 2007 – Dec 2009</span>
+            </div>
+            <div class="timeline-desc">
+              Kochi, Kerala. Executed client audit engagements and taxation filings.
+            </div>
+          </div>
+        </div>
+
+        <!-- JVR & Associates -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <div class="timeline-title">Article Assistant</div>
+                <div class="timeline-company">JVR & Associates</div>
+              </div>
+              <span class="timeline-date">2005 – 2007</span>
+            </div>
+            <div class="timeline-desc">
+              Foundational articleship training under ICAI guidelines.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications & Education -->
+  <section id="credentials">
+    <div class="container">
+      <h2 class="section-title">Certifications & Education</h2>
+      <p class="section-subtitle">Specialized certifications conferred by the Institute of Chartered Accountants of India (ICAI) and academic institutions.</p>
+
+      <div class="badges-grid">
+        <div class="cert-badge">
+          <div class="cert-icon">🎓</div>
+          <div>
+            <div class="cert-title">Chartered Accountant</div>
+            <div class="cert-org">ICAI</div>
+          </div>
+        </div>
+
+        <div class="cert-badge">
+          <div class="cert-icon">⚖️</div>
+          <div>
+            <div class="cert-title">Arbitration</div>
+            <div class="cert-org">ICAI Certification</div>
+          </div>
+        </div>
+
+        <div class="cert-badge">
+          <div class="cert-icon">🌍</div>
+          <div>
+            <div class="cert-title">FEMA Certification</div>
+            <div class="cert-org">ICAI Certification</div>
+          </div>
+        </div>
+
+        <div class="cert-badge">
+          <div class="cert-icon">🤖</div>
+          <div>
+            <div class="cert-title">AI & Machine Learning</div>
+            <div class="cert-org">ICAI Certification</div>
+          </div>
+        </div>
+
+        <div class="cert-badge">
+          <div class="cert-icon">🔍</div>
+          <div>
+            <div class="cert-title">FAFD (Forensic Accounting)</div>
+            <div class="cert-org">ICAI Certification</div>
+          </div>
+        </div>
+
+        <div class="cert-badge">
+          <div class="cert-icon">🌱</div>
+          <div>
+            <div class="cert-title">BRSR (Sustainability)</div>
+            <div class="cert-org">ICAI Certification</div>
+          </div>
+        </div>
+
+        <div class="cert-badge">
+          <div class="cert-icon">📊</div>
+          <div>
+            <div class="cert-title">GST Certification</div>
+            <div class="cert-org">ICAI Certification</div>
+          </div>
+        </div>
+
+        <div class="cert-badge">
+          <div class="cert-icon">🏛️</div>
+          <div>
+            <div class="cert-title">Public Finance & Govt Acct</div>
+            <div class="cert-org">ICAI Certification</div>
+          </div>
+        </div>
+
+        <div class="cert-badge">
+          <div class="cert-icon">📋</div>
+          <div>
+            <div class="cert-title">Concurrent Audits</div>
+            <div class="cert-org">ICAI Certification</div>
+          </div>
+        </div>
+
+        <div class="cert-badge">
+          <div class="cert-icon">🎓</div>
+          <div>
+            <div class="cert-title">B.Com (Commerce)</div>
+            <div class="cert-org">KG College, Pampady (2000–2003)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" style="background:#ffffff; border-top:1px solid var(--border);">
+    <div class="container">
+      <h2 class="section-title">Connect & Consultation</h2>
+      <p class="section-subtitle">Reach out for succession planning, corporate structuring, or tax advisory.</p>
+
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <h3>Office & Contact Details</h3>
+          <p>Feel free to reach out directly by phone, email, or schedule an in-person meeting at our office.</p>
+
+          <div class="info-item">
+            <span style="font-size:20px;">📍</span>
+            <div>
+              <div class="info-label">Office Address</div>
+              <div class="info-value">Saju & Co, Chartered Accountants<br>M.G Road, Ravipuram, Kochi, Kerala</div>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <span style="font-size:20px;">📞</span>
+            <div>
+              <div class="info-label">Direct Phone</div>
+              <div class="info-value"><a href="tel:+919496251613">+91 9496251613</a></div>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <span style="font-size:20px;">✉️</span>
+            <div>
+              <div class="info-label">Email</div>
+              <div class="info-value"><a href="mailto:jayson@sajuandco.com">jayson@sajuandco.com</a></div>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <span style="font-size:20px;">🌐</span>
+            <div>
+              <div class="info-label">Web & LinkedIn</div>
+              <div class="info-value">
+                <a href="https://www.linkedin.com/in/ca-jayson-jacob-mathew-4b203836" target="_blank">LinkedIn Profile</a> • 
+                <a href="https://sajuandco.com" target="_blank">sajuandco.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Simple Contact Message Form -->
+        <div class="contact-form">
+          <form action="mailto:jayson@sajuandco.com" method="post" enctype="text/plain">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="Name" class="form-control" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Your Email Address</label>
+              <input type="email" id="email" name="Email" class="form-control" placeholder="name@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="Subject" class="form-control" placeholder="Succession Planning / Advisory" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="Message" class="form-control" placeholder="How can I assist you?" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 CA Jayson Jacob Mathew. All Rights Reserved.</p>
+      <p style="margin-top:6px; font-size:12px;">Partner at Saju & Co, Chartered Accountants • Kochi, Kerala, India</p>
+    </div>
+  </footer>
+
+</body>
+</html>
